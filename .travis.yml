@@ -12,8 +12,5 @@ before_script:
 script:
   - npm install
   - ng build --prod
-deploy:
-  skip_cleanup: true
-  provider: firebase
-  token:
-    secure: $FIREBASE_TOKEN
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN --non-interactive
