@@ -5,19 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { CustomerComponent } from './customer/customer.component';
+import { CompanyComponent } from './company/company.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerComponent
+    CompanyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
      RouterModule.forRoot([
        { path: '', redirectTo: '/', pathMatch: 'full' },
-       { path: 'customers', component: CustomerComponent }
+       { path: 'company', component: CompanyComponent }
      ])
   ],
   providers: [],
