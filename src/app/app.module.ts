@@ -3,23 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+import { DataTablesModule } from 'angular-datatables';
 
 import { AppComponent } from './app.component';
-import { CompanyComponent } from './company/company.component';
-import { HomeComponent } from './home/home.component';
+import { CompanyComponent } from './component/company/company.component';
+import { HomeComponent } from './component/home/home.component';
+import { SymbolsComponent } from './component/symbols/symbols.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompanyComponent,
-    HomeComponent
+    HomeComponent,
+    SymbolsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    DataTablesModule,
     RouterModule.forRoot([
        { path: '', redirectTo: '/home', pathMatch: 'full' },
        { path: 'home', component: HomeComponent },
+       { path: 'symbols', component: SymbolsComponent },
        { path: 'company', component: CompanyComponent }
     ])
   ],
