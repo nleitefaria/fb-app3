@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { DataTablesModule } from 'angular-datatables';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CompanyComponent } from './component/company/company.component';
@@ -23,6 +24,7 @@ import { SymbolDetailsComponent } from './component/symbol-details/symbol-detail
     BrowserModule,
     AppRoutingModule,
     DataTablesModule,
+    HttpClientModule,
     RouterModule.forRoot([
        { path: '', redirectTo: '/home', pathMatch: 'full' },
        { path: 'home', component: HomeComponent },
