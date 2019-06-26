@@ -1,22 +1,145 @@
-<p>  
-Profile
-</p>
-
-<ul class="nav nav-tabs" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" href="#income" role="tab" data-toggle="tab">Income statement</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#balance-sheet" role="tab" data-toggle="tab">Balance sheet</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#cash-flow" role="tab" data-toggle="tab">Cash flow</a>
-  </li>
-</ul>
-
-<!-- Tab panes -->
-<div class="tab-content">
-  <div role="tabpanel" class="tab-pane show active" id="income">TODO1</div>
-  <div role="tabpanel" class="tab-pane fade" id="balance-sheet">TODO2</div>
-  <div role="tabpanel" class="tab-pane fade" id="cash-flow">TODO3</div>
+<br>
+<div *ngIf="companyProfile" >
+<div class="row">
+		<div class="col-10"></div>
+	</div>
+	<div class="row">
+		<div class="col-9">
+			<div class="row">
+				<div class="col-2">
+					<b>Symbol: </b>
+				</div>
+				<div class="col"><a href="symbol/{{companyProfile.symbol}}" >{{companyProfile.symbol}}</a></div>
+			</div>
+			<div class="row">
+				<div class="col-2">
+					<b>Price: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.price}}</div>
+			</div>
+			<div class="row">
+				<div class="col-2">
+					<b>Beta: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.beta}}</div>
+			</div>
+			<div class="row">
+				<div class="col-2">
+					<b>Vol Avg: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.volAvg}}</div>
+			</div>
+			<div class="row">
+				<div class="col-2">
+					<b>MKT Cap: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.mktCap}}</div>
+			</div>
+			<div class="row">
+				<div class="col-2">
+					<b>Last Div: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.lastDiv}}</div>
+			</div>
+			<div class="row">
+				<div class="col-2">
+					<b>Range: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.range}}</div>
+			</div>
+			<div class="row">
+				<div class="col-2">
+					<b>Changes: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.changes}}</div>
+			</div>
+			<div class="row">
+				<div class="col-2">
+					<b>Changes %: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.changesPercentage}}</div>
+			</div>						
+			<div class="row">
+				<div class="col-2">
+					<b>Company: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.companyName}}</div>
+			</div>	
+			<div class="row">
+				<div class="col-2">
+					<b>Exchange: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.exchange}}</div>
+			</div>	
+			<div class="row">
+				<div class="col-2">
+					<b>Industry: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.industry}}</div>
+			</div>	
+			<div class="row">
+				<div class="col-2">
+					<b>Website: </b>
+				</div>
+				<div class="col">					
+					<a href="{{companyProfile.profile.website}}" target="_blank">{{companyProfile.profile.website}}</a>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-2">
+					<b>Description: </b>
+				</div>
+				<div class="col">
+					<a href data-toggle="modal" data-target="#myModal">Details</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-2">
+					<b>CEO: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.ceo}}</div>
+			</div>			
+			<div class="row">
+				<div class="col-2">
+					<b>Sector: </b>
+				</div>
+				<div class="col">{{companyProfile.profile.sector}}</div>
+			</div>												
+		</div>		
+		<div class="col-3">
+			<img src="{{companyProfile.profile.image}}" />
+		</div>
+	</div>	
+	<div class="modal" id="myModal">
+  		<div class="modal-dialog">
+    		<div class="modal-content">     
+      			<div class="modal-header">       
+        			<button type="button" class="close" data-dismiss="modal">&times;</button>
+      			</div>      
+      			<div class="modal-body">
+        			{{companyProfile.profile.description}}
+      			</div>    
+      			<div class="modal-footer">
+        			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      			</div>
+    		</div>
+  		</div>
+	</div>
+	<br>
+	<ul class="nav nav-tabs" role="tablist">
+  		<li class="nav-item">
+    		<a class="nav-link active" href="#income" role="tab" data-toggle="tab">Income statement</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link" href="#balance-sheet" role="tab" data-toggle="tab">Balance sheet</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link" href="#cash-flow" role="tab" data-toggle="tab">Cash flow</a>
+  		</li>
+	</ul>
+	<div class="tab-content">
+  		<div role="tabpanel" class="tab-pane show active" id="income">TODO1</div>
+  		<div role="tabpanel" class="tab-pane fade" id="balance-sheet">TODO2</div>
+  		<div role="tabpanel" class="tab-pane fade" id="cash-flow">TODO3</div>
+	</div>
 </div>
