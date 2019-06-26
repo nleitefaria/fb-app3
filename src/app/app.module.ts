@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { CompanyComponent } from './component/company/company.component';
 import { HomeComponent } from './component/home/home.component';
 import { SymbolsComponent } from './component/symbols/symbols.component';
+import { SymbolDetailsComponent } from './component/symbol-details/symbol-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompanyComponent,
     HomeComponent,
-    SymbolsComponent
+    SymbolsComponent,
+    SymbolDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,7 @@ import { SymbolsComponent } from './component/symbols/symbols.component';
        { path: '', redirectTo: '/home', pathMatch: 'full' },
        { path: 'home', component: HomeComponent },
        { path: 'symbols', component: SymbolsComponent },
+       { path: 'symbol/:id', component: SymbolDetailsComponent },
        { path: 'company', component: CompanyComponent }
     ])
   ],
