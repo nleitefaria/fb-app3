@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CompanyComponent } from './component/company/company.component';
@@ -25,6 +26,8 @@ import { SymbolDetailsComponent } from './component/symbol-details/symbol-detail
     AppRoutingModule,
     DataTablesModule,
     HttpClientModule,
+    FormsModule, 
+    ReactiveFormsModule,
     RouterModule.forRoot([
        { path: '', redirectTo: '/home', pathMatch: 'full' },
        { path: 'home', component: HomeComponent },
