@@ -12,6 +12,7 @@ import { CompanyComponent } from './component/company/company.component';
 import { HomeComponent } from './component/home/home.component';
 import { SymbolsComponent } from './component/symbols/symbols.component';
 import { SymbolDetailsComponent } from './component/symbol-details/symbol-details.component';
+import { MajorsIndexesComponent } from './component/majors-indexes/majors-indexes.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SymbolDetailsComponent } from './component/symbol-details/symbol-detail
     CompanyComponent,
     HomeComponent,
     SymbolsComponent,
-    SymbolDetailsComponent
+    SymbolDetailsComponent,
+    MajorsIndexesComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { SymbolDetailsComponent } from './component/symbol-details/symbol-detail
        { path: 'home', component: HomeComponent },
        { path: 'symbols', component: SymbolsComponent },
        { path: 'symbol/:id', component: SymbolDetailsComponent },
-       { path: 'company', component: CompanyComponent }
+       { path: 'company', component: CompanyComponent },
+       { path: 'major-indexes', component: MajorsIndexesComponent }
     ])
   ],
   providers: [],
