@@ -1,3 +1,43 @@
-<p>
-  majors-indexes works!
-</p>
+<br> 		  			
+<div *ngFor="let majorIndex of majorIndexes">			
+	<div class="row">
+		<div class="col-10"></div>
+	</div>
+	<div class="row">
+		<div class="col-9">
+			<div class="row">
+				<div class="col-2">
+					<b>Ticker: </b>
+				</div>
+				<div class="col-8">
+					{{majorIndex.ticker}}
+				</div>
+			</div>					
+			<div class="row">
+				<div class="col-2">
+					<b>Index name: </b>
+				</div>
+				<div class="col-8">
+					{{majorIndex.indexName}}
+				</div>
+			</div>			
+			<div class="row">
+				<div class="col-2">
+					<b>Price: </b>
+				</div>
+				<div class="col-8">
+					{{majorIndex.price}}
+				</div>
+			</div>						
+			<div class="row">
+				<div class="col-2">
+					<b>Changes: </b>
+				</div>
+				<div class="col-8">
+					{{majorIndex.changes}}
+				</div>
+			</div>			
+			<hr>			
+		</div>	
+	</div>
+</div>
