@@ -3,9 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 
 import CompanyProfile from '../../model/company-profile';
 import IncomeStatement from '../../model/income-statement';
+import BalanceSheets from '../../model/balance-sheets';
 
 import CompanyProfileService from '../../service/company-profile.service';
 import IncomeService from '../../service/income.service';
+import BalanceSheetService from '../../service/balance-sheet.service';
+
 
 @Component({
   selector: 'app-symbol-details',
@@ -19,8 +22,9 @@ export class SymbolDetailsComponent implements OnInit {
 	symbol: string;
  	companyProfile: CompanyProfile;
  	incomeStatement: IncomeStatement;
+ 	balanceSheets: BalanceSheets;
 
-  	constructor(private route: ActivatedRoute, private companyProfileService: CompanyProfileService, private incomeService: IncomeService) 
+  	constructor(private route: ActivatedRoute, private companyProfileService: CompanyProfileService, private incomeService: IncomeService, private balanceSheetService: BalanceSheetService) 
   	{
   		this.route.params.subscribe((params) => 
   		{
@@ -32,6 +36,7 @@ export class SymbolDetailsComponent implements OnInit {
   	{
     	this.getCompanyProfile(this.symbol);
     	this.getIncome(this.symbol);
+    	this.getBalanceSheet(this.symbol);
   	}
   
   	getCompanyProfile(symbol)
@@ -64,33 +69,44 @@ export class SymbolDetailsComponent implements OnInit {
       			this.incomeStatement.financials[i].preferredDividends = data.financials[i]["Preferred Dividends"];
             	this.incomeStatement.financials[i].netIncomeCom = data.financials[i]["Net Income Com"];
             	this.incomeStatement.financials[i].ePS = data.financials[i]["EPS"];
-            	this.incomeStatement.financials[i].ePSDiluted = data.financials[i]["EPS Diluted"];
-  				//TODO: Finish
-  				
-  				
-  				
-  				
-  			this.incomeStatement.financials[i].weightedAverageShsOut = data.financials[i]["Weighted Average Shs Out"];
-            this.incomeStatement.financials[i].weightedAverageShsOutDil = data.financials[i]["Weighted Average Shs Out (Dil)"];
-            this.incomeStatement.financials[i].dividendPerShare = data.financials[i]["Dividend per Share"];
-            this.incomeStatement.financials[i].grossMargin = data.financials[i]["Gross Margin"];
-            this.incomeStatement.financials[i].eBITDAMargin = data.financials[i]["EBITDA Margin"];
-            this.incomeStatement.financials[i].eBITMargin = data.financials[i]["EBIT Margin"];
-            this.incomeStatement.financials[i].profitMargin = data.financials[i]["Profit Margin"];
-            this.incomeStatement.financials[i].freeCashFlowMargin = data.financials[i]["Free Cash Flow margin"];
-            this.incomeStatement.financials[i].eBITDA = data.financials[i]["EBITDA"];
-            this.incomeStatement.financials[i].eBIT = data.financials[i]["EBIT"];
-            this.incomeStatement.financials[i].consolidatedIncome = data.financials[i]["Consolidated Income"];
-            this.incomeStatement.financials[i].earningsBeforeTaxMargin = data.financials[i]["Earnings Before Tax Margin"];
-            this.incomeStatement.financials[i].netProfitMargin = data.financials[i]["Net Profit Margin"];
-  				
-  				
-  				
-  				
-  					
+            	this.incomeStatement.financials[i].ePSDiluted = data.financials[i]["EPS Diluted"];	
+  				this.incomeStatement.financials[i].weightedAverageShsOut = data.financials[i]["Weighted Average Shs Out"];
+            	this.incomeStatement.financials[i].weightedAverageShsOutDil = data.financials[i]["Weighted Average Shs Out (Dil)"];
+            	this.incomeStatement.financials[i].dividendPerShare = data.financials[i]["Dividend per Share"];
+            	this.incomeStatement.financials[i].grossMargin = data.financials[i]["Gross Margin"];
+            	this.incomeStatement.financials[i].eBITDAMargin = data.financials[i]["EBITDA Margin"];
+            	this.incomeStatement.financials[i].eBITMargin = data.financials[i]["EBIT Margin"];
+            	this.incomeStatement.financials[i].profitMargin = data.financials[i]["Profit Margin"];
+            	this.incomeStatement.financials[i].freeCashFlowMargin = data.financials[i]["Free Cash Flow margin"];
+            	this.incomeStatement.financials[i].eBITDA = data.financials[i]["EBITDA"];
+            	this.incomeStatement.financials[i].eBIT = data.financials[i]["EBIT"];
+           	 	this.incomeStatement.financials[i].consolidatedIncome = data.financials[i]["Consolidated Income"];
+            	this.incomeStatement.financials[i].earningsBeforeTaxMargin = data.financials[i]["Earnings Before Tax Margin"];
+            	this.incomeStatement.financials[i].netProfitMargin = data.financials[i]["Net Profit Margin"];		
 			}
-      		
-      		     		 
+      				     		 
     	});
   	}
+  	
+  	getBalanceSheet(symbol)
+  	{ 		
+  		this.balanceSheetService.getOne(symbol).subscribe(data => {
+  					 			
+  			//TODO
+  			//alert(data.financials.length);
+  			//this.balanceSheets = data;  			
+  			//alert(this.balanceSheets.financials.length);
+  				 			  			     								
+  			 			
+  		});
+  		
+  		
+  	}
+  		
+  		
+  	
+  	
+  	
+  	
+  	
 }

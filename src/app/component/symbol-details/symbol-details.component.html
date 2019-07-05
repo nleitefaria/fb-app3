@@ -344,10 +344,26 @@
 			</div>
   		</div>
   		<div role="tabpanel" class="tab-pane fade" id="balance-sheet">
-  			TODO2
+  			 		
+  			<br> 		  			
+			<div *ngFor="let bs of balanceSheet">			
+				<div class="row">
+					<div class="col-10"></div>
+				</div>
+				<div class="row">
+					<div class="col-9">
+						<div class="row">
+							<div class="col-4">
+								<b>Date: </b>
+							</div>
+							<div class="col"><b>{{bs.date}}</b></div>
+						</div>
+					</div>
+				</div>
+			</div>
   		
   		
-  		
+  			<hr>
   		</div>
   		<div role="tabpanel" class="tab-pane fade" id="cash-flow">
   			TODO3
