@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import BalanceSheet from '../model/balance-sheet';
+import BalanceSheets from '../model/balance-sheets';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +10,12 @@ import BalanceSheet from '../model/balance-sheet';
 export default class BalanceSheetService {
 
   	public API = 'https://financialmodelingprep.com/api/v3';
-  	public ENDPOINT = `${this.API}/financials/income-statement/`;
+  	public ENDPOINT = `${this.API}/financials/balance-sheet-statement/`;
 
   	constructor(private http: HttpClient) { }
   	  
-  	getOne(symbol): Observable<BalanceSheet> 
+  	getOne(symbol): Observable<BalanceSheets> 
   	{
-    	return this.http.get<BalanceSheet>(this.ENDPOINT + symbol);
+    	return this.http.get<BalanceSheets>(this.ENDPOINT + symbol);
   	}  
 }

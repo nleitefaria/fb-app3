@@ -90,23 +90,41 @@ export class SymbolDetailsComponent implements OnInit {
   	
   	getBalanceSheet(symbol)
   	{ 		
-  		this.balanceSheetService.getOne(symbol).subscribe(data => {
-  					 			
-  			//TODO
-  			//alert(data.financials.length);
-  			//this.balanceSheets = data;  			
-  			//alert(this.balanceSheets.financials.length);
-  				 			  			     								
-  			 			
-  		});
-  		
-  		
+  		this.balanceSheetService.getOne(symbol).subscribe(data => {			
+  			this.balanceSheets = data;
+      		var i;
+      		for (i = 0; i < this.balanceSheets.financials.length; i++) {
+      			this.balanceSheets.financials[i].cashAndCashEquivalents = data.financials[i]["Cash and cash equivalents"];       			
+      			this.balanceSheets.financials[i].shortTermInvestments = data.financials[i]["Short-term investments"]; 
+      			this.balanceSheets.financials[i].cashAndShortTermInvestments = data.financials[i]["Cash and short-term investments"]; 
+      			this.balanceSheets.financials[i].receivables = data.financials[i]["Receivables"];       			     			
+      			this.balanceSheets.financials[i].inventories = data.financials[i]["Inventories"]; 
+      			this.balanceSheets.financials[i].totalCurrentAssets = data.financials[i]["Total current assets"]; 
+      			this.balanceSheets.financials[i].propertyPlantEquipmentNet = data.financials[i]["Property, Plant & Equipment Net"];      			
+      			this.balanceSheets.financials[i].goodWillAndIntangibleAssets = data.financials[i]["Goodwill and Intangible Assets"];
+      			this.balanceSheets.financials[i].longTermInvestments = data.financials[i]["Long-term investments"];
+      			this.balanceSheets.financials[i].taxAssets = data.financials[i]["Tax assets"];     			
+      			this.balanceSheets.financials[i].totalNonCurrentAssets = data.financials[i]["Total non-current assets"];
+      			this.balanceSheets.financials[i].totalAssets = data.financials[i]["Total assets"];
+      			this.balanceSheets.financials[i].payables = data.financials[i]["Payables"];     			
+      			this.balanceSheets.financials[i].shortTermDebt = data.financials[i]["Short-term debt"];
+      			this.balanceSheets.financials[i].totalCurrentLiabilities = data.financials[i]["Total current liabilities"];
+      			this.balanceSheets.financials[i].longTermDebt = data.financials[i]["Long-term debt"];     			
+      			this.balanceSheets.financials[i].totalDebt = data.financials[i]["Total debt"];
+      			this.balanceSheets.financials[i].deferredRevenue = data.financials[i]["Deferred revenue"];
+      			this.balanceSheets.financials[i].taxLiabilities = data.financials[i]["Tax Liabilities"];      			
+      			this.balanceSheets.financials[i].depositLiabilities = data.financials[i]["Deposit Liabilities"];
+      			this.balanceSheets.financials[i].totalNonCurrentLiabilities = data.financials[i]["Total non-current liabilities"];
+      			this.balanceSheets.financials[i].totalLiabilities = data.financials[i]["Total liabilities"];     			
+      			this.balanceSheets.financials[i].otherComprehensiveIncome = data.financials[i]["Other comprehensive income"];
+      			this.balanceSheets.financials[i].retainedEarnings = data.financials[i]["Retained earnings (deficit)"];
+      			this.balanceSheets.financials[i].totalShareholdersEquity = data.financials[i]["Total shareholders equity"];     			
+      			this.balanceSheets.financials[i].investments = data.financials[i]["Investments"];
+      			this.balanceSheets.financials[i].netDebt = data.financials[i]["Net Debt"];
+      			this.balanceSheets.financials[i].otherAssets = data.financials[i]["Other Assets"];
+      			this.balanceSheets.financials[i].otherLiabilities = data.financials[i]["Other Liabilities"];     			
+      		}  				 			  			     											 			
+  		}); 		
   	}
-  		
-  		
-  	
-  	
-  	
-  	
   	
 }

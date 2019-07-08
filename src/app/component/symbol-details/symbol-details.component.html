@@ -343,10 +343,9 @@
 				<hr>
 			</div>
   		</div>
-  		<div role="tabpanel" class="tab-pane fade" id="balance-sheet">
-  			 		
+  		<div role="tabpanel" class="tab-pane fade" id="balance-sheet">			 		
   			<br> 		  			
-			<div *ngFor="let bs of balanceSheet">			
+			<div *ngFor="let bs of balanceSheets.financials">			
 				<div class="row">
 					<div class="col-10"></div>
 				</div>
@@ -357,13 +356,185 @@
 								<b>Date: </b>
 							</div>
 							<div class="col"><b>{{bs.date}}</b></div>
+						</div>		
+						<div class="row">
+							<div class="col-4">
+								<b>Cash and cash equivalents: </b>
+							</div>
+							<div class="col">{{bs.cashAndCashEquivalents}}</div>
 						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>shortTermInvestments: </b>
+							</div>
+							<div class="col">{{bs.shortTermInvestments}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>cashAndShortTermInvestments: </b>
+							</div>
+							<div class="col">{{bs.cashAndShortTermInvestments}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>receivables: </b>
+							</div>
+							<div class="col">{{bs.receivables}}</div>
+						</div>						
+						<div class="row">
+							<div class="col-4">
+								<b>inventories: </b>
+							</div>
+							<div class="col">{{bs.inventories}}</div>
+						</div>												
+						<div class="row">
+							<div class="col-4">
+								<b>totalCurrentAssets: </b>
+							</div>
+							<div class="col">{{bs.totalCurrentAssets}}</div>
+						</div>						
+						<div class="row">
+							<div class="col-4">
+								<b>propertyPlantEquipmentNet: </b>
+							</div>
+							<div class="col">{{bs.propertyPlantEquipmentNet}}</div>
+						</div>												
+						<div class="row">
+							<div class="col-4">
+								<b>goodWillAndIntangibleAssets: </b>
+							</div>
+							<div class="col">{{bs.goodWillAndIntangibleAssets}}</div>
+						</div>						
+						<div class="row">
+							<div class="col-4">
+								<b>longTermInvestments: </b>
+							</div>
+							<div class="col">{{bs.longTermInvestments}}</div>
+						</div>										
+						<div class="row">
+							<div class="col-4">
+								<b>taxAssets: </b>
+							</div>
+							<div class="col">{{bs.taxAssets}}</div>
+						</div>						
+						<div class="row">
+							<div class="col-4">
+								<b>totalNonCurrentAssets: </b>
+							</div>
+							<div class="col">{{bs.totalNonCurrentAssets}}</div>
+						</div>						
+						<div class="row">
+							<div class="col-4">
+								<b>totalAssets: </b>
+							</div>
+							<div class="col">{{bs.totalAssets}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>payables: </b>
+							</div>
+							<div class="col">{{bs.payables}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>shortTermDebt: </b>
+							</div>
+							<div class="col">{{bs.shortTermDebt}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>totalCurrentLiabilities: </b>
+							</div>
+							<div class="col">{{bs.totalCurrentLiabilities}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>longTermDebt: </b>
+							</div>
+							<div class="col">{{bs.longTermDebt}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>totalDebt: </b>
+							</div>
+							<div class="col">{{bs.totalDebt}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>deferredRevenue: </b>
+							</div>
+							<div class="col">{{bs.deferredRevenue}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>taxLiabilities: </b>
+							</div>
+							<div class="col">{{bs.taxLiabilities}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>depositLiabilities: </b>
+							</div>
+							<div class="col">{{bs.depositLiabilities}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>totalNonCurrentLiabilities: </b>
+							</div>
+							<div class="col">{{bs.totalNonCurrentLiabilities}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>totalLiabilities: </b>
+							</div>
+							<div class="col">{{bs.totalLiabilities}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>otherComprehensiveIncome: </b>
+							</div>
+							<div class="col">{{bs.otherComprehensiveIncome}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>retainedEarnings: </b>
+							</div>
+							<div class="col">{{bs.retainedEarnings}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>totalShareholdersEquity: </b>
+							</div>
+							<div class="col">{{bs.totalShareholdersEquity}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>investments: </b>
+							</div>
+							<div class="col">{{bs.investments}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>netDebt: </b>
+							</div>
+							<div class="col">{{bs.netDebt}}</div>
+						</div>			
+						<div class="row">
+							<div class="col-4">
+								<b>otherAssets: </b>
+							</div>
+							<div class="col">{{bs.otherAssets}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>otherLiabilities: </b>
+							</div>
+							<div class="col">{{bs.otherLiabilities}}</div>
+						</div>		
+					<hr>	
 					</div>
 				</div>
-			</div>
-  		
-  		
-  			<hr>
+			</div>  		 			
   		</div>
   		<div role="tabpanel" class="tab-pane fade" id="cash-flow">
   			TODO3
