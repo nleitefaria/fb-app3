@@ -1,0 +1,54 @@
+<meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<br> 		  			
+<div *ngFor="let mostActive of mostActives">			
+	<div class="row">
+		<div class="col-10"></div>
+	</div>
+	<div class="row">
+		<div class="col-9">
+			<div class="row">
+				<div class="col-3">
+					<b>Ticker: </b>
+				</div>
+				<div class="col-8">
+					{{mostActive.ticker}}
+				</div>
+			</div>					
+			<div class="row">
+				<div class="col-3">
+					<b>Company name: </b>
+				</div>
+				<div class="col-8">
+					{{mostActive.companyName}}
+				</div>
+			</div>			
+			<div class="row">
+				<div class="col-3">
+					<b>Price: </b>
+				</div>
+				<div class="col-8">
+					{{mostActive.price}}
+				</div>
+			</div>						
+			<div class="row">
+				<div class="col-3">
+					<b>Changes: </b>
+				</div>
+				<div class="col-8">
+					{{mostActive.changes}}
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-3">
+					<b>Changes percentage: </b>
+				</div>
+				<div class="col-8">
+					{{mostActive.changesPercentage}}
+				</div>
+			</div>									
+			<hr>			
+		</div>	
+	</div>
+</div>
