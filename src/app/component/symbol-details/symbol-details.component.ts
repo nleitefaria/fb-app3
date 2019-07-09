@@ -4,11 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import CompanyProfile from '../../model/company-profile';
 import IncomeStatement from '../../model/income-statement';
 import BalanceSheets from '../../model/balance-sheets';
+import CashFlows from '../../model/cash-flows';
 
 import CompanyProfileService from '../../service/company-profile.service';
 import IncomeService from '../../service/income.service';
 import BalanceSheetService from '../../service/balance-sheet.service';
-
+import CashFlowService from '../../service/cash-flow.service';
 
 @Component({
   selector: 'app-symbol-details',
@@ -23,8 +24,9 @@ export class SymbolDetailsComponent implements OnInit {
  	companyProfile: CompanyProfile;
  	incomeStatement: IncomeStatement;
  	balanceSheets: BalanceSheets;
+ 	cashFlows: CashFlows;
 
-  	constructor(private route: ActivatedRoute, private companyProfileService: CompanyProfileService, private incomeService: IncomeService, private balanceSheetService: BalanceSheetService) 
+  	constructor(private route: ActivatedRoute, private companyProfileService: CompanyProfileService, private incomeService: IncomeService, private balanceSheetService: BalanceSheetService, private cashFlowService: CashFlowService) 
   	{
   		this.route.params.subscribe((params) => 
   		{
@@ -37,6 +39,7 @@ export class SymbolDetailsComponent implements OnInit {
     	this.getCompanyProfile(this.symbol);
     	this.getIncome(this.symbol);
     	this.getBalanceSheet(this.symbol);
+    	this.getCashFlow(this.symbol);
   	}
   
   	getCompanyProfile(symbol)
@@ -125,6 +128,32 @@ export class SymbolDetailsComponent implements OnInit {
       			this.balanceSheets.financials[i].otherLiabilities = data.financials[i]["Other Liabilities"];     			
       		}  				 			  			     											 			
   		}); 		
+  	}
+  	
+  	getCashFlow(symbol)
+  	{ 
+  		this.cashFlowService.getOne(symbol).subscribe(data => {			
+  			this.cashFlows = data;
+  			var i;
+      		for (i = 0; i < this.cashFlows.financials.length; i++) 
+      		{   		
+      			this.cashFlows.financials[i].depreciationAmortization = data.financials[i]["Depreciation & Amortization"]; 
+      			this.cashFlows.financials[i].stockBasedCompensation = data.financials[i]["Stock-based compensation"]; 
+      			this.cashFlows.financials[i].operatingCashFlow = data.financials[i]["Operating Cash Flow"]; 
+      			this.cashFlows.financials[i].capitalExpenditure = data.financials[i]["Capital Expenditure"]; 
+      			this.cashFlows.financials[i].acquisitionsAndDisposals = data.financials[i]["Acquisitions and disposals"]; 
+      			this.cashFlows.financials[i].investmentPurchasesAndSales = data.financials[i]["Investment purchases and sales"]; 
+      			this.cashFlows.financials[i].investingCashFlow = data.financials[i]["Investing Cash flow"];     		
+      			this.cashFlows.financials[i].issuanceOfDebt = data.financials[i]["Issuance (repayment) of debt"]; 
+      			this.cashFlows.financials[i].issuanceOfShares = data.financials[i]["Issuance (buybacks) of shares"]; 
+      			this.cashFlows.financials[i].dividendPayments = data.financials[i]["Dividend payments"];     			
+      			this.cashFlows.financials[i].financingCashFlow = data.financials[i]["Financing Cash Flow"]; 
+      			this.cashFlows.financials[i].effectOfForexChangesOnCash = data.financials[i]["Effect of forex changes on cash"]; 
+      			this.cashFlows.financials[i].netCashFlowChangeInCash = data.financials[i]["Net cash flow / Change in cash"];    			
+      			this.cashFlows.financials[i].freeCashFlow = data.financials[i]["Free Cash Flow"]; 
+      			this.cashFlows.financials[i].netCashMarketCap = data.financials[i]["Net Cash/Marketcap"];     		
+      		}  			
+  		}); 		 	
   	}
   	
 }

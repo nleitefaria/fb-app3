@@ -1,3 +1,6 @@
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />  
+<meta http-equiv="Pragma" content="no-cache" />  
+<meta http-equiv="Expires" content="0" /> 
 <br>
 <div *ngIf="companyProfile" >
 	<div class="row">
@@ -537,11 +540,112 @@
 			</div>  		 			
   		</div>
   		<div role="tabpanel" class="tab-pane fade" id="cash-flow">
-  			TODO3
-  			
-  			
-  			
-  		
+  			<br> 		  			
+			<div *ngFor="let cf of cashFlows.financials">			
+				<div class="row">
+					<div class="col-10"></div>
+				</div>
+				<div class="row">
+					<div class="col-9">
+						<div class="row">
+							<div class="col-4">
+								<b>Date: </b>
+							</div>
+							<div class="col"><b>{{cf.date}}</b></div>
+						</div>					
+						<div class="row">
+							<div class="col-4">
+								<b>Depreciation & Amortization: </b>
+							</div>
+							<div class="col">{{cf.depreciationAmortization}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Stock-based compensation: </b>
+							</div>
+							<div class="col">{{cf.stockBasedCompensation}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Operating Cash Flow: </b>
+							</div>
+							<div class="col">{{cf.operatingCashFlow}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Capital Expenditure: </b>
+							</div>
+							<div class="col">{{cf.capitalExpenditure}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Acquisitions and disposals: </b>
+							</div>
+							<div class="col">{{cf.acquisitionsAndDisposals}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Investment purchases and sales: </b>
+							</div>
+							<div class="col">{{cf.investmentPurchasesAndSales}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Investing Cash flow: </b>
+							</div>
+							<div class="col">{{cf.investingCashFlow}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Issuance (repayment) of debt: </b>
+							</div>
+							<div class="col">{{cf.issuanceOfDebt}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Issuance (buybacks) of shares: </b>
+							</div>
+							<div class="col">{{cf.issuanceOfShares}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Dividend payments: </b>
+							</div>
+							<div class="col">{{cf.dividendPayments}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Financing Cash Flow: </b>
+							</div>
+							<div class="col">{{cf.financingCashFlow}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Effect of forex changes on cash: </b>
+							</div>
+							<div class="col">{{cf.effectOfForexChangesOnCash}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Net cash flow / Change in cash: </b>
+							</div>
+							<div class="col">{{cf.netCashFlowChangeInCash}}</div>
+						</div>										
+						<div class="row">
+							<div class="col-4">
+								<b>Free Cash Flow: </b>
+							</div>
+							<div class="col">{{cf.freeCashFlow}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Net Cash/Marketcap: </b>
+							</div>
+							<div class="col">{{cf.netCashMarketCap}}</div>
+						</div>		
+					<hr>	
+					</div>					
+				</div>		
   		</div>
 	</div>
 </div>
