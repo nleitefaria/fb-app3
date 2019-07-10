@@ -14,6 +14,7 @@ import { SymbolsComponent } from './component/symbols/symbols.component';
 import { SymbolDetailsComponent } from './component/symbol-details/symbol-details.component';
 import { MajorsIndexesComponent } from './component/majors-indexes/majors-indexes.component';
 import { MostActiveComponent } from './component/most-active/most-active.component';
+import { GainersComponent } from './component/gainers/gainers.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MostActiveComponent } from './component/most-active/most-active.compone
     SymbolsComponent,
     SymbolDetailsComponent,
     MajorsIndexesComponent,
-    MostActiveComponent
+    MostActiveComponent,
+    GainersComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { MostActiveComponent } from './component/most-active/most-active.compone
        { path: 'symbol/:id', component: SymbolDetailsComponent },
        { path: 'company', component: CompanyComponent },
        { path: 'major-indexes', component: MajorsIndexesComponent },
-       { path: 'most-active', component: MostActiveComponent }
+       { path: 'most-active', component: MostActiveComponent },
+       { path: 'gainers', component: GainersComponent }
     ])
   ],
   providers: [],
