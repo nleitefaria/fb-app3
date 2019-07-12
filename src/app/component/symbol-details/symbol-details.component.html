@@ -139,6 +139,9 @@
   		<li class="nav-item">
     		<a class="nav-link" href="#cash-flow" role="tab" data-toggle="tab">Cash flow</a>
   		</li>
+  		<li class="nav-item">
+    		<a class="nav-link" href="#ratios" role="tab" data-toggle="tab">Ratios</a>
+  		</li>
 	</ul>
 	<div class="tab-content">
   		<div role="tabpanel" class="tab-pane show active" id="income"> 		 		
@@ -646,6 +649,27 @@
 					<hr>	
 					</div>					
 				</div>		
-  		</div>
-	</div>
+  			</div>
+		</div>		
+		<div role="tabpanel" class="tab-pane fade" id="ratios">
+  			<br> 		
+			<div *ngFor="let cf of cashFlows.financials">			
+				<div class="row">
+					<div class="col-10"></div>
+				</div>
+				 
+				<div class="row">
+					<div class="col-9">
+						<div class="row">
+							<div class="col-4">
+								<b>Date: </b>
+							</div>
+							<div class="col"><b>{{cf.date}}</b></div>
+						</div>	
+					</div>
+				</div>
+				
+				<hr>
+			</div>
+		</div>
 </div>

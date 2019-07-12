@@ -5,11 +5,13 @@ import CompanyProfile from '../../model/company-profile';
 import IncomeStatement from '../../model/income-statement';
 import BalanceSheets from '../../model/balance-sheets';
 import CashFlows from '../../model/cash-flows';
+import FinancialRatios from '../../model/financial-ratios';
 
 import CompanyProfileService from '../../service/company-profile.service';
 import IncomeService from '../../service/income.service';
 import BalanceSheetService from '../../service/balance-sheet.service';
 import CashFlowService from '../../service/cash-flow.service';
+import FinancialRatiosService from '../../service/financial-ratios.service';
 
 @Component({
   selector: 'app-symbol-details',
@@ -25,8 +27,9 @@ export class SymbolDetailsComponent implements OnInit {
  	incomeStatement: IncomeStatement;
  	balanceSheets: BalanceSheets;
  	cashFlows: CashFlows;
+ 	financialRatios: FinancialRatios;
 
-  	constructor(private route: ActivatedRoute, private companyProfileService: CompanyProfileService, private incomeService: IncomeService, private balanceSheetService: BalanceSheetService, private cashFlowService: CashFlowService) 
+  	constructor(private route: ActivatedRoute, private companyProfileService: CompanyProfileService, private incomeService: IncomeService, private balanceSheetService: BalanceSheetService, private cashFlowService: CashFlowService, private financialRatiosService : FinancialRatiosService) 
   	{
   		this.route.params.subscribe((params) => 
   		{
@@ -40,6 +43,7 @@ export class SymbolDetailsComponent implements OnInit {
     	this.getIncome(this.symbol);
     	this.getBalanceSheet(this.symbol);
     	this.getCashFlow(this.symbol);
+    	this.getRatios(this.symbol);
   	}
   
   	getCompanyProfile(symbol)
@@ -155,5 +159,28 @@ export class SymbolDetailsComponent implements OnInit {
       		}  			
   		}); 		 	
   	}
+  	
+  	
+  	getRatios(symbol)
+  	{
+  		this.financialRatiosService.getOne(symbol).subscribe(data => {			
+  			this.financialRatios = data;
+  			
+  			
+  			alert(this.financialRatios.ratio[0].liquidityMeasurementRatios.currentRatio);
+  			
+  			
+  		}); 	
+  	
+  	
+  	
+  	}
+  	
+  	
+  	
+  	
+  	
+  	
+  	
   	
 }
