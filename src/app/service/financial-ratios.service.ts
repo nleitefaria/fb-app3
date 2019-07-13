@@ -10,7 +10,7 @@ import FinancialRatios from '../model/financial-ratios';
 export default class FinancialRatiosService {
 
   	public API = 'https://financialmodelingprep.com/api/v3';
-  	public ENDPOINT = `${this.API}/financial-ratios`;
+  	public ENDPOINT = `${this.API}/financial-ratios/`;
 
   	constructor(private http: HttpClient) { }
   	  

@@ -165,11 +165,6 @@ export class SymbolDetailsComponent implements OnInit {
   	{
   		this.financialRatiosService.getOne(symbol).subscribe(data => {			
   			this.financialRatios = data;
-  			
-  			
-  			alert(this.financialRatios.ratio[0].liquidityMeasurementRatios.currentRatio);
-  			
-  			
   		}); 	
   	
   	

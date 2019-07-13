@@ -1,8 +1,9 @@
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />  
-<meta http-equiv="Pragma" content="no-cache" />  
-<meta http-equiv="Expires" content="0" /> 
+<meta http-equiv="Cache-Control"
+	content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <br>
-<div *ngIf="companyProfile" >
+<div *ngIf="companyProfile">
 	<div class="row">
 		<div class="col-10"></div>
 	</div>
@@ -12,7 +13,9 @@
 				<div class="col-2">
 					<b>Symbol: </b>
 				</div>
-				<div class="col"><a href="symbol/{{companyProfile.symbol}}" >{{companyProfile.symbol}}</a></div>
+				<div class="col">
+					<a href="symbol/{{companyProfile.symbol}}">{{companyProfile.symbol}}</a>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-2">
@@ -61,31 +64,31 @@
 					<b>Changes %: </b>
 				</div>
 				<div class="col">{{companyProfile.profile.changesPercentage}}</div>
-			</div>						
+			</div>
 			<div class="row">
 				<div class="col-2">
 					<b>Company: </b>
 				</div>
 				<div class="col">{{companyProfile.profile.companyName}}</div>
-			</div>	
+			</div>
 			<div class="row">
 				<div class="col-2">
 					<b>Exchange: </b>
 				</div>
 				<div class="col">{{companyProfile.profile.exchange}}</div>
-			</div>	
+			</div>
 			<div class="row">
 				<div class="col-2">
 					<b>Industry: </b>
 				</div>
 				<div class="col">{{companyProfile.profile.industry}}</div>
-			</div>	
+			</div>
 			<div class="row">
 				<div class="col-2">
 					<b>Website: </b>
 				</div>
-				<div class="col">					
-					<a href="{{companyProfile.profile.website}}" target="_blank">{{companyProfile.profile.website}}</a>	
+				<div class="col">
+					<a href="{{companyProfile.profile.website}}" target="_blank">{{companyProfile.profile.website}}</a>
 				</div>
 			</div>
 			<div class="row">
@@ -101,257 +104,47 @@
 					<b>CEO: </b>
 				</div>
 				<div class="col">{{companyProfile.profile.ceo}}</div>
-			</div>			
+			</div>
 			<div class="row">
 				<div class="col-2">
 					<b>Sector: </b>
 				</div>
 				<div class="col">{{companyProfile.profile.sector}}</div>
-			</div>												
-		</div>		
+			</div>
+		</div>
 		<div class="col-3">
 			<img src="{{companyProfile.profile.image}}" />
 		</div>
-	</div>	
+	</div>
 	<div class="modal" id="myModal">
-  		<div class="modal-dialog">
-    		<div class="modal-content">     
-      			<div class="modal-header">       
-        			<button type="button" class="close" data-dismiss="modal">&times;</button>
-      			</div>      
-      			<div class="modal-body">
-        			{{companyProfile.profile.description}}
-      			</div>    
-      			<div class="modal-footer">
-        			<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      			</div>
-    		</div>
-  		</div>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					{{companyProfile.profile.description}}</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
 	</div>
 	<br>
 	<ul class="nav nav-tabs" role="tablist">
-  		<li class="nav-item">
-    		<a class="nav-link active" href="#income" role="tab" data-toggle="tab">Income</a>
-  		</li>
-  		<li class="nav-item">
-    		<a class="nav-link" href="#balance-sheet" role="tab" data-toggle="tab">Balance sheet</a>
-  		</li>
-  		<li class="nav-item">
-    		<a class="nav-link" href="#cash-flow" role="tab" data-toggle="tab">Cash flow</a>
-  		</li>
-  		<li class="nav-item">
-    		<a class="nav-link" href="#ratios" role="tab" data-toggle="tab">Ratios</a>
-  		</li>
+		<li class="nav-item"><a class="nav-link active" href="#income"
+			role="tab" data-toggle="tab">Income</a></li>
+		<li class="nav-item"><a class="nav-link" href="#balance-sheet"
+			role="tab" data-toggle="tab">Balance sheet</a></li>
+		<li class="nav-item"><a class="nav-link" href="#cash-flow"
+			role="tab" data-toggle="tab">Cash flow</a></li>
+		<li class="nav-item"><a class="nav-link" href="#ratios"
+			role="tab" data-toggle="tab">Ratios</a></li>
 	</ul>
 	<div class="tab-content">
-  		<div role="tabpanel" class="tab-pane show active" id="income"> 		 		
-  		<br> 		  			
-			<div *ngFor="let financial of incomeStatement.financials">			
-				<div class="row">
-					<div class="col-10"></div>
-				</div>
-				<div class="row">
-				<div class="col-9">
-					<div class="row">
-						<div class="col-4">
-							<b>Date: </b>
-						</div>
-						<div class="col"><b>{{financial.date}}</b></div>
-					</div>														
-					<div class="row">
-						<div class="col-4">
-							<b>Revenue: </b>
-						</div>
-						<div class="col">{{financial.revenue}}</div>
-					</div>											
-					<div class="row">
-						<div class="col-4">
-							<b>Revenue Growth: </b>
-						</div>
-						<div class="col">{{financial.revenueGrowth}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Cost Of Revenue: </b>
-						</div>
-						<div class="col">{{financial.costOfRevenue}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Gross Profit: </b>
-						</div>
-						<div class="col">{{financial.grossProfit}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>R&D Expenses: </b>
-						</div>
-						<div class="col">{{financial.rdExpenses}}</div>
-					</div>				
-					<div class="row">
-						<div class="col-4">
-							<b>SGA Expenses: </b>
-						</div>
-						<div class="col">{{financial.sgaExpense}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Operating Expenses: </b>
-						</div>
-						<div class="col">{{financial.operatingExpenses}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Operating Income: </b>
-						</div>
-						<div class="col">{{financial.operatingIncome}}</div>
-					</div>											
-					<div class="row">
-						<div class="col-4">
-							<b>Interest Expense: </b>
-						</div>
-						<div class="col">{{financial.interestExpense}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Earnings before Tax: </b>
-						</div>
-						<div class="col">{{financial.earningsBeforeTax}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Income Tax Expense: </b>
-						</div>
-						<div class="col">{{financial.operatingIncome}}</div>
-					</div>
-					<div class="row">
-						<div class="col-4">
-							<b>Net income Non Controlling Int: </b>
-						</div>
-						<div class="col">{{financial.netIncomeNonControllingInt }}</div>
-					</div>
-					<div class="row">
-						<div class="col-4">
-							<b>Net income Discontinued: </b>
-						</div>
-						<div class="col">{{financial.netIncomeDiscontinued}}</div>
-					</div>
-					<div class="row">
-						<div class="col-4">
-							<b>Net income: </b>
-						</div>
-						<div class="col">{{financial.netIncome}}</div>
-					</div>								
-					<div class="row">
-						<div class="col-4">
-							<b>Preferred dividends: </b>
-						</div>
-						<div class="col">{{financial.preferredDividends}}</div>
-					</div>
-					<div class="row">
-						<div class="col-4">
-							<b>Net income com: </b>
-						</div>
-						<div class="col">{{financial.netIncomeCom}}</div>
-					</div>
-					<div class="row">
-						<div class="col-4">
-							<b>EPS: </b>
-						</div>
-						<div class="col">{{financial.ePS}}</div>
-					</div>					
-					<div class="row">
-						<div class="col-4">
-							<b>EPS Diluted: </b>
-						</div>
-						<div class="col">{{financial.ePSDiluted}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Weighted average Shs Out: </b>
-						</div>
-						<div class="col">{{financial.weightedAverageShsOut}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Weighted average Shs Out Dil: </b>
-						</div>
-						<div class="col">{{financial.weightedAverageShsOutDil}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Dividend per share: </b>
-						</div>
-						<div class="col">{{financial.dividendPerShare}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Gross margin: </b>
-						</div>
-						<div class="col">{{financial.grossMargin}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>EBITDA Margin: </b>
-						</div>
-						<div class="col">{{financial.eBITDAMargin}}</div>
-					</div>											
-					<div class="row">
-						<div class="col-4">
-							<b>EBIT Margin: </b>
-						</div>
-						<div class="col">{{financial.eBITMargin}}</div>
-					</div>		
-					<div class="row">
-						<div class="col-4">
-							<b>Profit margin: </b>
-						</div>
-						<div class="col">{{financial.profitMargin}}</div>
-					</div>											
-					<div class="row">
-						<div class="col-4">
-							<b>Free cash flow margin: </b>
-						</div>
-						<div class="col">{{financial.freeCashFlowMargin}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>EBITDA: </b>
-						</div>
-						<div class="col">{{financial.eBITDA}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>EBIT: </b>
-						</div>
-						<div class="col">{{financial.eBIT}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Consolidated income: </b>
-						</div>
-						<div class="col">{{financial.consolidatedIncome}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Earnings before tax margin: </b>
-						</div>
-						<div class="col">{{financial.earningsBeforeTaxMargin}}</div>
-					</div>	
-					<div class="row">
-						<div class="col-4">
-							<b>Net profit margin: </b>
-						</div>
-						<div class="col">{{financial.netProfitMargin}}</div>
-					</div>	 																									
-				</div>		
-				</div>					
-				<hr>
-			</div>
-  		</div>
-  		<div role="tabpanel" class="tab-pane fade" id="balance-sheet">			 		
-  			<br> 		  			
-			<div *ngFor="let bs of balanceSheets.financials">			
+		<div role="tabpanel" class="tab-pane show active" id="income">
+			<br>
+			<div *ngFor="let financial of incomeStatement.financials">
 				<div class="row">
 					<div class="col-10"></div>
 				</div>
@@ -361,8 +154,217 @@
 							<div class="col-4">
 								<b>Date: </b>
 							</div>
-							<div class="col"><b>{{bs.date}}</b></div>
-						</div>		
+							<div class="col">
+								<b>{{financial.date}}</b>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Revenue: </b>
+							</div>
+							<div class="col">{{financial.revenue}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Revenue Growth: </b>
+							</div>
+							<div class="col">{{financial.revenueGrowth}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Cost Of Revenue: </b>
+							</div>
+							<div class="col">{{financial.costOfRevenue}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Gross Profit: </b>
+							</div>
+							<div class="col">{{financial.grossProfit}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>R&D Expenses: </b>
+							</div>
+							<div class="col">{{financial.rdExpenses}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>SGA Expenses: </b>
+							</div>
+							<div class="col">{{financial.sgaExpense}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Operating Expenses: </b>
+							</div>
+							<div class="col">{{financial.operatingExpenses}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Operating Income: </b>
+							</div>
+							<div class="col">{{financial.operatingIncome}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Interest Expense: </b>
+							</div>
+							<div class="col">{{financial.interestExpense}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Earnings before Tax: </b>
+							</div>
+							<div class="col">{{financial.earningsBeforeTax}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Income Tax Expense: </b>
+							</div>
+							<div class="col">{{financial.operatingIncome}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Net income Non Controlling Int: </b>
+							</div>
+							<div class="col">{{financial.netIncomeNonControllingInt }}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Net income Discontinued: </b>
+							</div>
+							<div class="col">{{financial.netIncomeDiscontinued}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Net income: </b>
+							</div>
+							<div class="col">{{financial.netIncome}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Preferred dividends: </b>
+							</div>
+							<div class="col">{{financial.preferredDividends}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Net income com: </b>
+							</div>
+							<div class="col">{{financial.netIncomeCom}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>EPS: </b>
+							</div>
+							<div class="col">{{financial.ePS}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>EPS Diluted: </b>
+							</div>
+							<div class="col">{{financial.ePSDiluted}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Weighted average Shs Out: </b>
+							</div>
+							<div class="col">{{financial.weightedAverageShsOut}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Weighted average Shs Out Dil: </b>
+							</div>
+							<div class="col">{{financial.weightedAverageShsOutDil}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Dividend per share: </b>
+							</div>
+							<div class="col">{{financial.dividendPerShare}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Gross margin: </b>
+							</div>
+							<div class="col">{{financial.grossMargin}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>EBITDA Margin: </b>
+							</div>
+							<div class="col">{{financial.eBITDAMargin}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>EBIT Margin: </b>
+							</div>
+							<div class="col">{{financial.eBITMargin}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Profit margin: </b>
+							</div>
+							<div class="col">{{financial.profitMargin}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Free cash flow margin: </b>
+							</div>
+							<div class="col">{{financial.freeCashFlowMargin}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>EBITDA: </b>
+							</div>
+							<div class="col">{{financial.eBITDA}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>EBIT: </b>
+							</div>
+							<div class="col">{{financial.eBIT}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Consolidated income: </b>
+							</div>
+							<div class="col">{{financial.consolidatedIncome}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Earnings before tax margin: </b>
+							</div>
+							<div class="col">{{financial.earningsBeforeTaxMargin}}</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								<b>Net profit margin: </b>
+							</div>
+							<div class="col">{{financial.netProfitMargin}}</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane fade" id="balance-sheet">
+			<br>
+			<div *ngFor="let bs of balanceSheets.financials">
+				<div class="row">
+					<div class="col-10"></div>
+				</div>
+				<div class="row">
+					<div class="col-9">
+						<div class="row">
+							<div class="col-4">
+								<b>Date: </b>
+							</div>
+							<div class="col">
+								<b>{{bs.date}}</b>
+							</div>
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<b>Cash and cash equivalents: </b>
@@ -386,49 +388,49 @@
 								<b>Receivables: </b>
 							</div>
 							<div class="col">{{bs.receivables}}</div>
-						</div>						
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<b>Inventories: </b>
 							</div>
 							<div class="col">{{bs.inventories}}</div>
-						</div>												
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<b>Total current assets: </b>
 							</div>
 							<div class="col">{{bs.totalCurrentAssets}}</div>
-						</div>						
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<b>Property plant equipment net: </b>
 							</div>
 							<div class="col">{{bs.propertyPlantEquipmentNet}}</div>
-						</div>												
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<b>Good will and intangible assets: </b>
 							</div>
 							<div class="col">{{bs.goodWillAndIntangibleAssets}}</div>
-						</div>						
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<b>Long term investments: </b>
 							</div>
 							<div class="col">{{bs.longTermInvestments}}</div>
-						</div>										
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<b>Tax assets: </b>
 							</div>
 							<div class="col">{{bs.taxAssets}}</div>
-						</div>						
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<b>Total non current assets: </b>
 							</div>
 							<div class="col">{{bs.totalNonCurrentAssets}}</div>
-						</div>						
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<b>Total assets: </b>
@@ -524,7 +526,7 @@
 								<b>Net debt: </b>
 							</div>
 							<div class="col">{{bs.netDebt}}</div>
-						</div>			
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<b>Other assets: </b>
@@ -536,15 +538,15 @@
 								<b>Other liabilities: </b>
 							</div>
 							<div class="col">{{bs.otherLiabilities}}</div>
-						</div>		
-					<hr>	
+						</div>
+						<hr>
 					</div>
 				</div>
-			</div>  		 			
-  		</div>
-  		<div role="tabpanel" class="tab-pane fade" id="cash-flow">
-  			<br> 		  			
-			<div *ngFor="let cf of cashFlows.financials">			
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane fade" id="cash-flow">
+			<br>
+			<div *ngFor="let cf of cashFlows.financials">
 				<div class="row">
 					<div class="col-10"></div>
 				</div>
@@ -554,8 +556,10 @@
 							<div class="col-4">
 								<b>Date: </b>
 							</div>
-							<div class="col"><b>{{cf.date}}</b></div>
-						</div>					
+							<div class="col">
+								<b>{{cf.date}}</b>
+							</div>
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<b>Depreciation & Amortization: </b>
@@ -633,7 +637,7 @@
 								<b>Net cash flow / Change in cash: </b>
 							</div>
 							<div class="col">{{cf.netCashFlowChangeInCash}}</div>
-						</div>										
+						</div>
 						<div class="row">
 							<div class="col-4">
 								<b>Free Cash Flow: </b>
@@ -645,31 +649,66 @@
 								<b>Net Cash/Marketcap: </b>
 							</div>
 							<div class="col">{{cf.netCashMarketCap}}</div>
-						</div>		
-					<hr>	
-					</div>					
-				</div>		
-  			</div>
-		</div>		
+						</div>
+						<hr>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div role="tabpanel" class="tab-pane fade" id="ratios">
-  			<br> 		
-			<div *ngFor="let cf of cashFlows.financials">			
+			<br>
+			<div *ngFor="let ratios of financialRatios.ratios">
 				<div class="row">
 					<div class="col-10"></div>
 				</div>
-				 
+
 				<div class="row">
-					<div class="col-9">
+					<div class="col-12">
 						<div class="row">
-							<div class="col-4">
+							<div class="col-1">
 								<b>Date: </b>
 							</div>
-							<div class="col"><b>{{cf.date}}</b></div>
-						</div>	
+							<div class="col">
+								<b>{{ratios.date}}</b>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-2"></div>
+							<div class="col">
+								<div class="row">
+									<div class="col-4">
+										<b>Liquidity Measurement Ratios</b>
+									</div>
+									<div class="col">
+										<div class="col">
+											<div class="row">
+
+												<div class="col">
+													<div class="col">
+														<div class="col">
+															<div class="row">
+
+																<div class="col-6">
+																	<b>Current ratio: </b>
+																</div>
+																<div class="col">{{ratios.liquidityMeasurementRatios.currentRatio}}</div>
+																<div class="col-6">
+																	<b>TODO: </b>
+																</div>
+																<div class="col">TODO</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				
 				<hr>
 			</div>
 		</div>
-</div>
+	</div>
