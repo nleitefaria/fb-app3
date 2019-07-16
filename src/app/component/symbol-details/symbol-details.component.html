@@ -671,7 +671,12 @@
 							<div class="col">
 								<b>{{ratios.date}}</b>
 							</div>
-						</div>
+						</div>																		
+						<div class="row">							
+							<div class="col">
+								<hr>
+							</div>
+						</div>																		
 						<div class="row">
 							<div class="col-2"></div>
 							<div class="col">
@@ -682,20 +687,28 @@
 									<div class="col">
 										<div class="col">
 											<div class="row">
-
 												<div class="col">
 													<div class="col">
 														<div class="col">
 															<div class="row">
-
-																<div class="col-6">
+																<div class="col-7">
 																	<b>Current ratio: </b>
 																</div>
-																<div class="col">{{ratios.liquidityMeasurementRatios.currentRatio}}</div>
-																<div class="col-6">
-																	<b>TODO: </b>
+																<div class="col">{{ratios.liquidityMeasurementRatios.currentRatio}}</div>																
+															</div>
+															
+															<div class="row">
+																<div class="col-7">
+																	<b>Quick ratio: </b>
 																</div>
-																<div class="col">TODO</div>
+																<div class="col">{{ratios.liquidityMeasurementRatios.quickRatio}}</div>																
+															</div>
+															
+															<div class="row">
+																<div class="col-7">
+																	<b>Cash ratio: </b>
+																</div>
+																<div class="col">{{ratios.liquidityMeasurementRatios.cashRatio}}</div>																
 															</div>
 														</div>
 													</div>
@@ -706,6 +719,95 @@
 								</div>
 							</div>
 						</div>
+						<div class="row">
+						<hr>
+						</div>
+						<div class="row">
+							<div class="col-2"></div>
+							<div class="col">
+								<div class="row">
+									<div class="col-4">
+										<b>Profitability Indicator Ratios</b>
+									</div>
+									<div class="col">
+										<div class="col">
+											<div class="row">
+												<div class="col">
+													<div class="col">
+														<div class="col">
+															<div class="row">
+																<div class="col-7">
+																	<b>Gross profit margin: </b>
+																</div>
+																<div class="col">{{ratios.profitabilityIndicatorRatios.grossProfitMargin}}</div>																
+															</div>
+															
+															<div class="row">
+																<div class="col-7">
+																	<b>Operating profit margin: </b>
+																</div>
+																<div class="col">{{ratios.profitabilityIndicatorRatios.operatingProfitMargin}}</div>																
+															</div>
+															
+															<div class="row">
+																<div class="col-7">
+																	<b>Pretax profit margin: </b>
+																</div>
+																<div class="col">{{ratios.profitabilityIndicatorRatios.pretaxProfitMargin}}</div>																
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>												
+						<div class="row">
+						<hr>
+						</div>												
+						<div class="row">
+							<div class="col-2"></div>
+							<div class="col">
+								<div class="row">
+									<div class="col-4">
+										<b>Debt Ratios</b>
+									</div>
+									<div class="col">
+										<div class="col">
+											<div class="row">
+												<div class="col">
+													<div class="col">
+														<div class="col">
+															<div class="row">
+																<div class="col-7">
+																	<b>Debt ratio: </b>
+																</div>
+																<div class="col">{{ratios.debtRatios.debtRatio}}</div>																
+															</div>																														
+															<div class="row">
+																<div class="col-7">
+																	<b>Debt equity ratio: </b>
+																</div>
+																<div class="col">{{ratios.debtRatios.debtEquityRatio}}</div>																
+															</div>
+															
+															<div class="row">
+																<div class="col-7">
+																	<b>Long term debt to capitalization: </b>
+																</div>
+																<div class="col">{{ratios.debtRatios.longtermDebtToCapitalization}}</div>																
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>									
 					</div>
 				</div>
 				<hr>
